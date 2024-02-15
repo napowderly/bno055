@@ -58,11 +58,15 @@ component _BNO055:
 
 module BNO055:
     ic = new _BNO055
+    i2c = new I2C
     power = new Power
     interrupt = new Pair
     # Connect IC power interfaces to the power rails
     power ~ ic.power_vdd
     power ~ ic.power_vddio
+
+    # pass through I2C
+    i2c ~ ic.i2c
 
     cap_vdd_100n = new Capacitor
     cap_vdd_100n.value = 100nF +/- 20%
