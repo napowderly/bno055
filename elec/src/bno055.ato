@@ -84,17 +84,17 @@ module BNO055:
     ic.CAP ~ cap_1.1; cap_1.2 ~ ic.GND
 
     addr_resistor = new Resistor
-    addr_resistor.value = 10kohm +/- 10%
+    addr_resistor.value = 0ohm to 10ohm
     addr_resistor.package = "0402"
     ic.COM3 ~ addr_resistor.1; addr_resistor.2 ~ ic.GND
 
     ps0_resistor = new Resistor
-    ps0_resistor.value = 10kohm +/- 10%
+    ps0_resistor.value = 0ohm to 10ohm
     ps0_resistor.package = "0402"
     ic.PS0 ~ ps0_resistor.1; ps0_resistor.2 ~ ic.GND
 
     ps1_resistor = new Resistor
-    ps1_resistor.value = 10kohm +/- 10%
+    ps1_resistor.value = 0ohm to 10ohm
     ps1_resistor.package = "0402"
     ic.PS1 ~ ps1_resistor.1; ps1_resistor.2 ~ ic.GND
 
