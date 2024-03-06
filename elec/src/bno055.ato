@@ -5,11 +5,21 @@ import I2C from "generics/interfaces.ato"
 import Pair from "generics/interfaces.ato"
 import Q13FC1350000400 from "Q13FC1350000400.ato"
 
-component _BNO055:
-    # component BNO055
-    footprint = "LGA-28_L5.2-W3.8-P0.50-BL"
+module BNO055 from BNO0XX:
     lcsc_id = "C93216"
     mpn = "C93216"
+
+module BNO085 from BNO0XX:
+    lcsc_id = "C5189642"
+    mpn = "C5189642"
+
+module BNO086 from BNO0XX:
+    lcsc_id = "C5189643"
+    mpn = "C5189643"
+
+component _BNO0XX:
+    # component BNO055
+    footprint = "LGA-28_L5.2-W3.8-P0.50-BL"
     # pins
     signal PIN1 ~ pin 1
     signal GND ~ pin 2
@@ -56,8 +66,9 @@ component _BNO055:
     i2c.sda ~ COM0
     i2c.scl ~ COM1
 
-module BNO055:
-    ic = new _BNO055
+
+module _BNO0XX:
+    ic = new _BNO0XX
     i2c = new I2C
     power = new Power
     interrupt = new Pair
